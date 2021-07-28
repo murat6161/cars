@@ -1,0 +1,86 @@
+/* GENERAL SEETINGS */
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway-Regular.ttf')
+}
+
+body {
+    background :white;
+    color:#3f3f3f;
+    font: 14px / 28px;
+    font-family: 'Raleway', arial;
+}
+
+h1 {
+    font-size: 52px;
+    letter-spacing: 4px;margin-bottom: 23px;
+}
+
+/* GRID SETTINGS */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+
+
+/* HOME SETTINGS  - HEADER SECTION*/
+
+header .logo {
+    margin-right: auto; /* Menuyu en sona aldik... en saga.. HOME, CARS vs */
+}
+
+header .logo img { /* Logo yuksekliginni ayarladik*/
+   
+    display: block;
+    height: 70px;
+}
+
+.menu li {
+    float: left; /* mMenuyu soldan saga dogru yan yana dizdik */
+
+}
+
+.menu li a {
+    padding: 27px 17px; /* Menu hizalama yaptik HOME, CARS vs */
+    display: block;
+    text-decoration: none; /*Yazilarin altindaki cizgileri kaldirdik*/
+    letter-spacing: 2px; /*Harfler arasindaki bosluklari 2px yaptik HOME, CARS vs*/
+    color: #333;
+    transition: all .5s ease; /*transition her zaman normal durumlara verilik yani hover li hale verilmez */
+}
+
+.menu li:hover a {
+    background: #500D16;
+    color: #fff;
+}
+
+/* MAIN SECTION */
+
+#mainSlider {
+    height: 500px;
+    background: url('../img/car1.png')  center center no-repeat; /*Sagdan soldan bosliuk kalmadan tamamen ortaya yerlestirsin m erkezi olacak sekilde */
+    background-size: cover; /*Ayirdigim alanin tamamini kapsasin */
+}
+
+.slider {
+    width: 100%;
+}
+
+#mainCaption {
+    height: 500px;
+    background: rgba(0, 0, 0, .3) /* opacity ile arka plan parlakligi ayarlaniyor*/
+}
+
+.caption {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ color: #fff;
+
+}
+
