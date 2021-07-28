@@ -8,12 +8,39 @@ body {
     background :white;
     color:#3f3f3f;
     font: 14px / 28px;
-    font-family: 'Raleway', arial;
+    font-family: 'Raleway';
 }
 
 h1 {
     font-size: 52px;
-    letter-spacing: 4px;margin-bottom: 23px;
+    letter-spacing: 4px;
+    margin-bottom: 23px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #500D16;
+    padding:5px;
+    
+}
+
+.sectionHeader {
+    background:#550D16;
+    border-bottom: 6px solid #000;
+    height: 60px;
+    color: #fff;
+    display:inline-block;
+    line-height: 60px;
+    font-size:24px;
+    padding:5px 40px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    
+}
+
+.sectionArea {
+
+    padding: 80px 0;
 }
 
 /* GRID SETTINGS */
@@ -22,6 +49,26 @@ h1 {
     margin: 0 auto;
     display: flex;
 }
+
+.featuresBody .container {
+    justify-content: space-between;
+}
+
+.col3 {
+    flex-grow: 1; /* Ucu de ayni esitlikte olsun */
+    width: 33.33% ; /* 3 column oldugu icin uce bolduk */
+}
+
+.engineBody .container {
+    justify-content: space-between;
+}
+
+.col2 {
+    flex-grow: 1;  /* Ikisi de ayni esitlikte olsun */
+    width: 50%; /* 2 column oldugu icin ikiye bolduk */
+    padding:20px;
+}
+
 
 
 
@@ -39,17 +86,21 @@ header .logo img { /* Logo yuksekliginni ayarladik*/
 }
 
 .menu li {
-    float: left; /* mMenuyu soldan saga dogru yan yana dizdik */
+    float: left; /* Menuyu soldan saga dogru yan yana dizdik */
 
 }
 
 .menu li a {
-    padding: 27px 17px; /* Menu hizalama yaptik HOME, CARS vs */
+    padding: 27px 17px; /* Menu hizalama yaptik HOME, CARS vs , yukaridan asagidan 27px, sagdan soldan 17px*/
     display: block;
     text-decoration: none; /*Yazilarin altindaki cizgileri kaldirdik*/
     letter-spacing: 2px; /*Harfler arasindaki bosluklari 2px yaptik HOME, CARS vs*/
     color: #333;
     transition: all .5s ease; /*transition her zaman normal durumlara verilik yani hover li hale verilmez */
+}
+
+.menu li a:last-child { /*CONTACT en saga yanasti*/
+    padding-right: 0;
 }
 
 .menu li:hover a {
@@ -84,3 +135,161 @@ header .logo img { /* Logo yuksekliginni ayarladik*/
 
 }
 
+/* FEATURE SECTION */
+.featuresTop {
+    text-align: center;
+}
+
+.item {
+    padding:10px 20px;
+}
+
+.zoom {
+    position: relative ; /*item in kendi icinde bir alani olsun ki icindeki diger ozelliklerine absolute yapabilelim*/
+    overflow: hidden; /* Icerisindeki zoom claasini uzerine geldigi zaman calistiracagiz */
+    display: inline-block; /*satirin tamamini kapsamasin */
+    width: 100%; /* item classini kapsayan col3 classi %33 unu kapsadigi icin o kismin %100 unu almis olduy */
+    vertical-align: top;
+
+
+}
+
+.zoom img {
+    display: block; /* item inline block dedik ama zoom img de block dedik.. esasinda inline block olan alanin tamamini sadece block yapiyor. yani her bir itemin block olmasi kendi icinde */
+    width: 100%; /* width %100 olmadan once goruntununn ir kismi gozukuyordu. width %100 olunca goruntunun tamami gozukmus oldu*/
+    height: auto;
+    transition: all 0.5s ease;
+}
+
+.item .itemText {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid #500D16
+}
+
+.item:hover .zoom img { /* Burada hover item uzerine gelince calsisin diyoruz.. ve zoom classindaki img 1.25 buyusun demis oluyoruz */
+
+
+    transform: scale(1.25);
+   
+
+}
+
+.item:hover h3 {
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.item:hover .itemText {
+    background: #500D16;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.btnDetails {
+    
+    color:#500D16;
+    text-decoration: none;
+    border: 1px solid #500D16;
+    transition: all 0.5s ease;
+}
+
+
+
+.item:hover .btnDetails {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.itemText p {
+    margin: 20px 0;
+}
+
+
+
+
+
+
+/* PARALLAX SECTION */
+
+#parallax{
+    background: linear-gradient(
+        rgba(0, 0, 0, .5),
+        rgba(0, 0, 0, .5)
+    ),
+    url('../img/parallax.jpg');
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+}
+
+ #parallax p {
+    color:#fff;
+} 
+
+
+
+/* ENGINE START SECTION */
+
+.engineTop {
+    text-align: center;
+}
+
+.engineContainer {
+    position: relative;
+    width: 100%;
+}
+
+.imageOver {
+    display:block;
+    width:100%;
+    height: auto;
+}
+
+.engineOverlay {
+    position: absolute; /*Position absolute dedikten sonra net degerler verebilirim*/
+    bottom:0;
+    left:0;
+    
+    background-color:  rgba(80, 13, 22, .7);
+    overflow: hidden;
+    width:0;
+    height: 100%;
+    transition: .5s ease;
+
+}
+
+.engineContainer:hover .engineOverlay {
+    width:100%;
+}
+
+.engineText {
+    white-space: nowrap;  /* Image Text yazisi alt alta gelmesini engellemek icin kullaniyoruz*/
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%); /* Image Text yazisini tam ortalama yapsin diye kullaniyoruzz bunu*/
+}
+
+.engineOverlay2 {
+    position: absolute; /*Position absolute dedikten sonra net degerler verebilirim*/
+    bottom:0;
+    left: 100%;
+    right: 0;
+    background-color:  rgba(80, 13, 22, .7);
+    overflow: hidden;
+    width:0;
+    height: 100%;
+    transition: .5s ease;
+    
+}
+
+.engineContainer:hover .engineOverlay2 {
+    width:100%;
+    left:0;
+}
