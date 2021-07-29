@@ -99,9 +99,7 @@ header .logo img { /* Logo yuksekliginni ayarladik*/
     transition: all .5s ease; /*transition her zaman normal durumlara verilik yani hover li hale verilmez */
 }
 
-.menu li a:last-child { /*CONTACT en saga yanasti*/
-    padding-right: 0;
-}
+
 
 .menu li:hover a {
     background: #500D16;
@@ -356,3 +354,9 @@ footer p {
     height: 50px;
    
 }
+
+
+/* CARS PAGE CSS */
+ .inspectTop {
+     text-align: center;
+ }
