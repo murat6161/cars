@@ -578,3 +578,88 @@ h4 {
     top:50%;
     left: 50%;
 }
+
+
+/* TEAM SECTION CSS */
+
+.teamTop {
+    text-align: center;
+}
+
+.teamBody .containerFluid {
+    display:flex;
+    width: 100%;
+    
+}
+
+.teamMember {
+    position:relative;
+    width: 100%;
+}
+
+.teamMember img .mainImg{ 
+    display: block;  /* Block dememizin sebebi bu img ye yukseklik ve genislik verebilelim */
+    width: 100%; 
+    height: 100%;
+
+
+}
+
+.teamMemberOverlay { 
+    position: absolute; /* bir ustundfeki class in relative ine gore hareket eder */
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-color: #500D16;
+    transition: .5s ease;
+}
+
+.teamMember:hover .teamMemberOverlay {
+    opacity:0;
+}
+
+.teamMember:hover .teamMemberInfo {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.teamTitle {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
+.teamMemberInfo {
+    color: #fff;
+    background-color: rgba(80, 13, 22, .7);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s ease;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.memberSoacialLinks {
+    text-align: center;
+}
+
+.memberSoacialLinks li {
+    
+    display: inline; /* ayni satirda oluyor sm linkleri... flex ile de dusunulebilir ama li ye degil de direk bu classin kendisin e */
+    margin-left:5px;
+    margin-right: 5px;
+}
